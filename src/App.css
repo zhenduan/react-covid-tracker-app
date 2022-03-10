@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #f7f7fb;
+  padding: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* main */
+.app__container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app__leftCol {
+  width: 70%;
+}
+
+.app__rightCol {
+  width: 30%;
+}
+
+/* header */
+.header__container {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.MuiFormControl-root {
+  width: 120px;
+}
+
+.header__searchContainer {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.header__searchBtn {
+  margin-left: 15px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Overview */
+.overview__container {
+  display: flex;
+}
+
+.overview__box {
+  width: 200px;
+  padding: 30px;
+  background-color: #fff;
+  margin-right: 20px;
+}
+
+.overview__heading {
+  color: gray;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.overview__casesIncrease,
+.overview__recoveredIncrease,
+.overview__deathsIncrease {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.overview__total {
+  color: rgb(34, 34, 34);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* table */
+
+.table__container table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  position: relative;
+}
+.table__container tbody {
+  display: block;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+/* .table__container thead {
+  padding: 10px;
+} */
+.table__container thead tr {
+  display: flex;
+  justify-content: space-between;
+  background-color: grey !important;
+  padding: 10px 4px;
+
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+
+.table__container td {
+  padding: 10px;
+}
+
+.table__container tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* Line chart */
+.lineChart__container {
+  height: 200px;
+  margin-top: 30px;
+}
+
+/* Bar chart */
+.barchart__container {
+  /* height: 300px; */
+  margin-top: 30px;
+}
+
+.barchart__container canvas {
+  /* height: 300px; */
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* popup */
+.popup__container img {
+  max-width: 75px;
+  display: block;
+  margin: 0px auto 10px auto;
+}
+
+.leaflet-popup-content-wrapper {
+  width: 190px;
+}
+
+.popup__container p {
+  text-align: center;
+  margin: auto !important;
+  font-size: 16px;
+}
+
+.leaflet-popup-content {
+  width: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app__container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .overview__container {
+    flex-direction: column;
+  }
+
+  .header__container {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .header__logo h1 {
+    font-size: 1.8rem;
+  }
+
+  .app__leftCol,
+  .app__rightCol {
+    width: 100%;
+  }
+
+  .bubble-map {
+    height: 327px;
+  }
+
+  .header__searchContainer,
+  .header__selector,
+  .overview__title,
+  .overview__box,
+  .barchart__container,
+  .bubble-map,
+  .header__logo,
+  .table__container table {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .overview__title,
+  h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .MuiFormControl-root {
+    width: 227px;
   }
 }
